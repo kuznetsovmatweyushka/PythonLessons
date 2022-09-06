@@ -4,18 +4,17 @@
 from random import randint
 
 n = int(input('Введите количество элементво: '))
-list = []
+numbers = []
 for i in range(n):
-    list.append(randint(-n, n))
-print(f'Список заполненный числами из промежутка от [-N, N]: {list}')
-list_index = []
+    numbers.append(randint(-n, n))
+print(f'Список заполненный числами из промежутка от [-N, N]: {numbers}')
 index = input('Введите индексы через пробел: ')
-print(index)
-for i in index:
-    if i != ' ':
-        list_index.append(int(list[int(i)]))
-print(f'Числа из массива хранящиеся на введёных вами индексах: {list_index}')
+list_index = index.split(' ')
+print(f'Ваши индексы: {list_index}')
 sum = 0
 for i in range(len(list_index)):
-    sum += list_index[i]
-print(sum)
+    if int(list_index[int(i)]) >= n:
+        print(f'Индекса {int(list_index[int(i)])} не существует!')
+    else:
+        sum += numbers[int(list_index[int(i)])]
+print(f'Сумма элементво стоящих на этих индексах: {sum}')
