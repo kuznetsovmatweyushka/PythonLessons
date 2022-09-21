@@ -134,8 +134,8 @@
 # объекту и возвращает новый итератор с кортежами
 # из индекса и элементов входных данных.
 
-# user = ['user1','user2','user3','user4','user5']
-# ids = [4, 5, 9, 14, 7]
+user = ['user1','user2','user3','user4','user5']
+ids = [4, 5, 9, 14, 7]
 
-# data = list(enumerate(user))
-# print(data)
+data = list(enumerate(user))
+print(data[0][0])
