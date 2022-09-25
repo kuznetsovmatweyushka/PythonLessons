@@ -2,6 +2,7 @@ import gui
 
 def read_file(path : str):
     with open(path,encoding = 'utf-8', mode = 'r') as file:
+        print('Ваша телефонная книга: ')
         print(file.read())
 
 def write_in_file(path : str):
@@ -14,6 +15,7 @@ def find_in_file(path : str):
         f_name = gui.find_contact()
         for i in f:
             if f_name in i:
+                print('Искомый контакт найден!')
                 print(i)
 
 def delete_in_file(path : str):
@@ -24,6 +26,7 @@ def delete_in_file(path : str):
             for i in f:
                 if f_name in i:
                     f.remove(i)
+                    print(f'Контакт {f_name} удалён!')
                     break
         with open(path,encoding = 'utf-8', mode = 'w') as file:
             file.write(';'.join(f))
