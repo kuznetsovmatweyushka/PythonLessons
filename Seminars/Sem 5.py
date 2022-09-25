@@ -28,11 +28,11 @@
 
 # [1, 2, 3, 5, 1, 5, 3, 10] => [2, 10]
 
-# my_list = [1, 2, 3, 5, 1, 5, 3, 10]
+my_list = [1, 2, 3, 5, 1, 5, 3, 10]
 
-# def get_unic(my_list):
-#     unic = [my_list[i] for i in range(len(my_list)) \
-#             if my_list[i] not in my_list[i+1:] and my_list[i] not in my_list[:i-1] ]
-#     return unic
+def get_unic(my_list):
+    unic = [my_list[i] for i in range(len(my_list)) \
+            if my_list[i] not in my_list[i+1:] and my_list[i] not in my_list[:i-1] ]
+    return unic
 
-# print(get_unic(my_list))
+print(get_unic(my_list))
