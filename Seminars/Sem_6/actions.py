@@ -3,7 +3,8 @@ import gui
 def read_file(path : str):
     with open(path,encoding = 'utf-8', mode = 'r') as file:
         print('Ваша телефонная книга: ')
-        print(file.read())
+        f = file.read()
+        print(f)
 
 def write_in_file(path : str):
     with open(path,encoding = 'utf-8', mode = 'a') as file:
@@ -17,6 +18,9 @@ def find_in_file(path : str):
             if f_name in i:
                 print('Искомый контакт найден!')
                 print(i)
+            else:
+                print('Такого контакта нет!')
+                break
 
 def delete_in_file(path : str):
         with open(path,encoding = 'utf-8', mode = 'r+') as file:

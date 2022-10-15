@@ -5,6 +5,14 @@ def add_contact():
     col = name + ', ' + about + ', ' + number + ';'
     return col
 
+
+def add_contact_json():
+    name = input('Введите имя контакта: ')
+    about = input('Введите описание контакта: ')
+    number = input('Введите номер контакта: ')  
+    contact = {name: [about, number]}
+    return contact
+
 def find_contact():
     name = input('Введите имя контакта: ')
     return name
@@ -18,8 +26,17 @@ def path_file():
     return path
 
 def help():
-    print('Справочник работает с ".txt" форматом. Для работы укажите путь к файлу и выберете действие: \n \
-        "/r" - чтение \n \
-            "/w" - запись \n \
-                "/f" - поиск по справочнику \n \
-                    "/d" - удаление из справочника')
+    print('Это вторая версия телефонного справочника.') 
+    print('Справочник работает с ".txt" ".json" форматом. Для работы укажите путь к файлу и выберете действие: \n \
+"/r" - чтение \n \
+"/w" - запись \n \
+"/f" - поиск по справочнику \n \
+"/d" - удаление из справочника \n \
+"/add" - объединение телефонных книг (работает с файлами формата ".json"')
+
+def format_file(path):
+    path = path.split('.')
+    if path[-1] == 'txt':
+        return 'txt'
+    elif path[-1] == 'json':
+        return 'json'
